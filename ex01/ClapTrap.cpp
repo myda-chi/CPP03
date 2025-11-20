@@ -6,19 +6,19 @@
 /*   By: myda-chi <myda-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 15:11:45 by myda-chi          #+#    #+#             */
-/*   Updated: 2025/11/17 19:46:22 by myda-chi         ###   ########.fr       */
+/*   Updated: 2025/11/20 15:05:31 by myda-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap(): _name(), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(): _name("yda"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
     std::cout << YELLOW "ClapTrap Default constructor called" << std::endl;
 }
 
-ClapTrap::ClapTrap(std::string &name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+ClapTrap::ClapTrap(const std::string &name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
     std::cout << YELLOW "ClapTrap constructor called" << std::endl;
 }

@@ -6,15 +6,16 @@
 /*   By: myda-chi <myda-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 12:41:24 by myda-chi          #+#    #+#             */
-/*   Updated: 2025/11/19 19:41:10 by myda-chi         ###   ########.fr       */
+/*   Updated: 2025/11/20 15:55:10 by myda-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap():ClapTrap("_clap_name"), FragTrap(), ScavTrap(), _name("")
+DiamondTrap::DiamondTrap():ClapTrap("default_clap_name"), FragTrap(), ScavTrap()
 {
     std::cout << BLUE "DiamondTrap Default constructor called" << std::endl;
+    _name = "default_name";
     _hitPoints = FragTrap::_hitPoints;
     _energyPoints = ScavTrap::_energyPoints;
     _attackDamage = FragTrap::_attackDamage;
@@ -28,7 +29,7 @@ DiamondTrap::DiamondTrap(const std::string &name):ClapTrap(name + "_clap_name"),
     _attackDamage = FragTrap::_attackDamage;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &other):FragTrap(other), ScavTrap(other), _name(other._name)
+DiamondTrap::DiamondTrap(const DiamondTrap &other):ClapTrap(other.ClapTrap::_name),FragTrap(other), ScavTrap(other), _name(other._name)
 {
     std::cout << YELLOW "DiamondTrap Copy constructor called" << std::endl;
     _hitPoints = other._hitPoints;

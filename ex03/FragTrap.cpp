@@ -6,7 +6,7 @@
 /*   By: myda-chi <myda-chi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 20:09:00 by myda-chi          #+#    #+#             */
-/*   Updated: 2025/11/19 19:39:06 by myda-chi         ###   ########.fr       */
+/*   Updated: 2025/11/20 15:48:55 by myda-chi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 FragTrap::FragTrap()
 {
     std::cout << "FragTrap Default constructor called" << std::endl;
+    _name = "default_name";
     _hitPoints = 100;
     _energyPoints = 100;
     _attackDamage = 30;
 }
-FragTrap::FragTrap(const std::string &name)
+FragTrap::FragTrap(const std::string &name):ClapTrap(name)
 {
     std::cout << "FragTrap constructor called" << std::endl;
     _name = name;
